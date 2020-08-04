@@ -71,7 +71,7 @@ export default function ToDo() {
     <div>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">To Do's Update</Typography>
+          <Typography variant="h6">To Do's Updated by Travis</Typography>
         </Toolbar>
       </AppBar>
       <Container
@@ -81,7 +81,7 @@ export default function ToDo() {
       >
         <Card>
           <CardHeader
-            title="My to do's"
+            title="My ToDo Updated by Travis"
             action={
               <Button
                 onClick={() => {
@@ -154,7 +154,7 @@ export default function ToDo() {
             }}
             color="secondary"
           >
-            
+
             Cancel
           </Button>
           <Button
