@@ -4,11 +4,11 @@ const io = require('socket.io-client');
 const app = feathers();
 
 
-const endpoint = app.get('endpoint');
+// const endpoint = process.env.REACT_APP_ENDPOINT;
 
+// console.log("endpoint is " + endpoint);
 
-
-const socket = io('http://localhost:3030', {timeout: 20000});
+const socket = io('https://sample-project-1982.ue.r.appspot.com', {timeout: 20000});
 
 app.configure(socketio(socket));
 
