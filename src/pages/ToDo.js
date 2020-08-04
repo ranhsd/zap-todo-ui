@@ -17,7 +17,6 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   TextField,
 } from "@material-ui/core";
@@ -26,7 +25,6 @@ import {
   getTasks,
   createTask,
   patchTask,
-  subscribe,
   subscribeToTaskPatched,
   subscribeToTaskCreated,
 } from "../api";
@@ -38,7 +36,8 @@ export default function ToDo() {
 
   const [showDialog, setShowDialog] = useState(false);
   const [taskText, setTaskText] = useState("");
-  const [saving, setSaving] = useState(false);
+  const saving = useState(false);
+
 
   subscribeToTaskCreated(function (data) {
     const clonedTasks = [...tasks];
@@ -161,16 +160,8 @@ export default function ToDo() {
             disabled={saving}
             color="primary"
             onClick={async () => {
-              try {
-                const newTask = createTask({
-                  checked: false,
-                  text: taskText,
-                });
-
-                setShowDialog(false);
-              } catch (error) {}
+              setShowDialog(false);
             }}
-            color="primary"
           >
             Save
           </Button>
